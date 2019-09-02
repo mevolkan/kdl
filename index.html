@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Joinery Direct</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/owl.carousel.css" </head> <body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <aside>
+<!--Main Slider Container-->
+<div class="slider-container">
+    <!--Main Slider Start-->
+    <div id="slider" class="slider owl-carousel">
+      <div class="item">
+        <div class="content">
+          <img src="images/img1.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <img src="images/img2.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <img src="images/img3.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <img src="images/img4.jpg" class="img-responsive">
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <img src="images/img5.jpg" class="img-responsive">
+        </div>
+      </div>
+    </div>
+    <!--Main Slider End-->
+
+    <!--Navigation Links For the Main Items-->
+    <div class="slider-controls">
+      <a class="slider-left" href="javascript:;"><span><i class="fa fa-2x fa-chevron-left"></i></span></a>
+      <a class="slider-right" href="javascript:;"><span><i class="fa fa-2x fa-chevron-right"></i></span></a>
+    </div>
+  </div>
+    </aside>
+    
+<main>
+  <h1>Craftsmanship that stands the test of time</h1>
+  <hr>
+  <h2>Coming soon</h2>
+  <p>
+    We're working hard to make this website available. We provide an in-house pre-finishing service for all internal and external products.
+    Interested? Contuct us and let's get started.
+    
+  </p>
+</main>
+
+    <!--Thumbnail slider container-->
+    <div class="thumbnail-slider-container">
+      <!--Thumbnail Slider Start-->
+      <div id="thumbnailSlider" class="thumbnail-slider owl-carousel">
+        <div class="item">
+          <div class="content">
+            <img src="images/img1.jpg" class="img-responsive">
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="images/img2.jpg" class="img-responsive">
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="images/img3.jpg" class="img-responsive">
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="images/img4.jpg" class="img-responsive">
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <img src="images/img5.jpg" class="img-responsive">
+          </div>
+        </div>
+        <!--Repeat the below item to add more items in slider(Here add the items same as in main slider items)-->
+        <div class="item">
+          <div class="content">
+            <!--Your Image Link-->
+          </div>
+        </div>
+      </div>
+      <!--Thumbnail Slider End-->
+    </div>
+
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="assets/js/owl.carousel.js"></script>
+  <script>$(document).ready(function () {
+      // reference for main items
+      var slider = $('#slider');
+      // reference for thumbnail items
+      var thumbnailSlider = $('#thumbnailSlider');
+      //transition time in ms
+      var duration = 500;
+
+      // carousel function for main slider
+      slider.owlCarousel({
+        loop: false,
+        nav: false,
+        items: 1
+      }).on('changed.owl.carousel', function (e) {
+        //On change of main item to trigger thumbnail item
+        thumbnailSlider.trigger('to.owl.carousel', [e.item.index, duration, true]);
+      });
+
+      // carousel function for thumbnail slider
+      thumbnailSlider.owlCarousel({
+        loop: true,
+        margin:10,
+        center: true, //to display the thumbnail item in center
+        nav: true,
+        responsive: {
+          0: {
+            items: 3
+          },
+          600: {
+            items: 4
+          },
+          1000: {
+            items: 6
+          }
+        }
+      }).on('click', '.owl-item', function () {
+        // On click of thumbnail items to trigger same main item
+        slider.trigger('to.owl.carousel', [$(this).index(), duration, true]);
+
+      }).on('changed.owl.carousel', function (e) {
+        // On change of thumbnail item to trigger main item
+        slider.trigger('to.owl.carousel', [e.item.index, duration, true]);
+      });
+
+
+      //These two are navigation for main items
+      $('.slider-right').click(function () {
+        slider.trigger('next.owl.carousel');
+      });
+      $('.slider-left').click(function () {
+        slider.trigger('prev.owl.carousel');
+      });
+    });
+
+
+  </script>
+  </body>
+
+</html>
