@@ -1,3 +1,6 @@
+body{
+    font-family: "Montserrat";
+}
 .slider-container{
     position: relative;
     display: block;
@@ -48,14 +51,24 @@ box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     counter-increment:dots;
     content: counter(dots);
 }
-.align-middle{
+.align-middle, .slider-controls{
     display: inline-block;
     vertical-align: middle;
     float: none;
 }
 footer{
     background-color: #13496d;
-    color:#ebcdb1;
+    color: #ebcdb1;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+main{
+    position: absolute;
+    width: 100%;
+    left: 0;
+
+}
 }
 footer a, footer a:hover, footer a:focus { 
     color: #ebcdb1;
@@ -130,6 +143,9 @@ button.btn.btn-default{
 .form-control, button.btn.btn-default {
     border-radius: 50px;
   }
-  .form-control{
+.form-control{
     padding: 10px 45px;
-  }
+}
+td{
+    padding-right:10px;
+}

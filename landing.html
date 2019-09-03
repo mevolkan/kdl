@@ -100,9 +100,9 @@
 				<h3>Leave your email and we will notify you when we go live</h3>
 			</div>
 			<div class="col-md-8 col-sm-6 col-lg-12">
-				<form class="navbar-form navbar-left" role="search">
+				<form class="navbar-form navbar-left" role="search" method="post" action="mail.php">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Enter Email">
+						<input type="text" class="form-control" placeholder="Enter Email" name="email">
 					</div>
 					<button type="submit" class="btn btn-default">Subscribe</button>
 				</form>
@@ -121,7 +121,7 @@
 			</div>
 
 		</div>
-		<div class="col-md-8 col-sm-6 col-lg-12 ">
+		<div class=" container-fluid">
 			<div class="thumbnail-slider-container">
 				<div id="thumbnailSlider" class="thumbnail-slider owl-carousel">
 					<div class="item">
